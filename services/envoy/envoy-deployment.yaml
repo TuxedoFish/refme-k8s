@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: refme-envoy-proxy
+  labels:
+    app: refme-envoy-proxy
+  namespace: development
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: refme-envoy-proxy
+  template:
+    metadata:
+      labels:
+        app: refme-envoy-proxy
+    spec:
+      containers:
+        - name: refme-envoy-proxy
+          image: hmliversedge/refme-envoy-proxy:feature-dockerhub-integration
+          env:
+            - name: LISTEN_PORT
+              value: "50051"
+            - name: SERVICE_DISCOVERY_ADDRESS
+              value: "refme-articles-service.development.svc.cluster.local"
+            - name: SERVICE_DISCOVERY_PORT
+              value: "8080"
+          ports:
+            - containerPort: 50051
+              name: http
+            - name: envoy-admin
+              containerPort: 8081

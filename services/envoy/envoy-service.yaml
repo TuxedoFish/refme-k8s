@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: refme-envoy-proxy
+  namespace: development
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-internal: "true"
+    external-dns.alpha.kubernetes.io/hostname: proxy.grpc.example.com
+  labels:
+    app: refme-envoy-proxy
+spec:
+  sessionAffinity: None
+  type: LoadBalancer
+  ports:
+  - name: http
+    port: 50051
+    targetPort: http
+    protocol: TCP
+  - name: envoy-admin
+    port: 8081
+    targetPort: envoy-admin
+    protocol: TCP
+  selector:
+    app: refme-envoy-proxy

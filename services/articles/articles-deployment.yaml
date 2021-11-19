@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: refme-articles-service
+  namespace: development
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: refme-articles-service
+  template:
+    metadata:
+      labels:
+        app: refme-articles-service
+    spec:
+      containers:
+        - name: refme-articles-service 
+          image: hmliversedge/refme-articles-api:feature-dockerhub-integration
+          env:
+            - name: PORT
+              value: "8080"
+            - name: SPRINGER_API_KEY 
+              value: "66d2a126a14009044fb70d5781ebb284"
+          ports:
+            - containerPort: 8080 

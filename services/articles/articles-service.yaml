@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: refme-articles-service
+  namespace: development
+  labels:
+    app: refme-articles-service
+spec:
+  clusterIP: None
+  selector:
+    app: refme-articles-service
+  ports:
+  - name: grpc-port
+    port: 8080 
+    targetPort: 8080
