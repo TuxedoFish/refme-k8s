@@ -8,6 +8,6 @@ resource "aws_vpc" "main" {
 }
 
 resource "aws_vpc_dhcp_options" "dhcpos" {
-  domain_name         = "${var.region}.conpute.internal"
+  domain_name         = "${var.region}.compute.internal"
   domain_name_servers = ["AmazonProvidedDNS"]
 }
