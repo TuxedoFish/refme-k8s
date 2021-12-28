@@ -74,5 +74,5 @@ then
     kubectl create -f ./config/namespaces/namespace-dev.json
 else
     # Output to the screen that not recongized
-    echo "Command not recognized please use one of: [status/build-images/start/stop/restart]"
+    echo "Command not recognized please use one of: [start-minikube/start/stop/restart/status]"
 fi
