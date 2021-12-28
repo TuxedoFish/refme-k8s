@@ -48,7 +48,7 @@ resource "aws_route_table" "public_rt" {
 }
 
 # Internet gateway for public internet access
-resource "aws_route_table" "igw" {
+resource "aws_internet_gateway" "igw" {
     vpc_id = aws_vpc.main
 }
 

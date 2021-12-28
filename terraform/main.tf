@@ -16,6 +16,8 @@ terraform {
 module "kubernetes" {
   source         = "./kubernetes"
   vpc_cidr_block = "10.240.0.0/16"
+  private_subnet01_netnum = "1"
+  public_subnet01_netnum = "2"
   vpc_name       = "k8s-cluster-vpc"
   region         = "eu-west-2"
 }
