@@ -15,10 +15,12 @@ spec:
   - name: http
     port: 50051
     targetPort: http
+    nodePort: 30000
     protocol: TCP
   - name: envoy-admin
     port: 8081
     targetPort: envoy-admin
+    nodePort: 30001
     protocol: TCP
   selector:
     app: refme-envoy-proxy

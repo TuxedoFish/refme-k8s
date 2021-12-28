@@ -9,7 +9,7 @@ Requirements:
 - virtualbox
 - kubectl
 
-Use the deploy.sh helper script to `build-images` and then `start-minikube`. Once having done this use the `start` script to run the deployment and service. At this point you should need to run `minikube addons configure metallb` giving it a range of 192.168.59.105 and 192.168.59.120. 
+Use the deploy.sh helper script and the command `start-minikube`. Once having done this use the `start` script to run the deployment and service. At this point you should need to run `minikube addons configure metallb` giving it a range of 192.168.59.105 and 192.168.59.120. 
 
 Having done this you can use the following test command to see if the service is up and running:
 

@@ -28,5 +28,5 @@ spec:
           ports:
             - containerPort: 50051
               name: http
-            - name: envoy-admin
-              containerPort: 8081
+            - containerPort: 8081
+              name: envoy-admin
