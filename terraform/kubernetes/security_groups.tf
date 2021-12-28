@@ -47,7 +47,7 @@ resource "aws_security_group" "bastion_node" {
     }
 }
 
-resource "aws_security_group" "k8s_worker_nodes" {
+resource "aws_security_group" "k8s_masters_nodes" {
     name =  "k8s_workers_${var.cluster_name}"
     vpc_id = aws_vpc.main.id
     description = "Worker nodes security group"

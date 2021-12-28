@@ -1,3 +1,11 @@
+variable "master_instance_type" {
+    type = string
+}
+
+variable "worker_instance_type" {
+    type = string
+}
+
 variable "vpc_cidr_block" {
     type = string
 }
